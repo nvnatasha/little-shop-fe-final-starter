@@ -10,6 +10,7 @@ const merchantsNavButton = document.querySelector("#merchants-nav")
 const itemsNavButton = document.querySelector("#items-nav")
 const addNewButton = document.querySelector("#add-new-button")
 const showingText = document.querySelector("#showing-text")
+const displayOptions = document.querySelector(".display-options")
 
 //Form elements
 const merchantForm = document.querySelector("#new-merchant-form")
@@ -142,7 +143,7 @@ function showMerchantsView() {
   showingText.innerText = "All Merchants"
   addRemoveActiveNav(merchantsNavButton, itemsNavButton)
   addNewButton.dataset.state = 'merchant'
-  show([merchantsView, addNewButton])
+  show([merchantsView, addNewButton, displayOptions])
   hide([itemsView])
   displayMerchants(merchants)
 }
@@ -247,7 +248,7 @@ function getMerchantCoupons(event) {
 
 function displayMerchantCoupons(coupons) {
   show([couponsView])
-  hide([merchantsView, itemsView])
+  hide([merchantsView, itemsView, displayOptions])
 
   couponsView.innerHTML = ``
   coupons.forEach((coupon) =>{
@@ -257,9 +258,8 @@ function displayMerchantCoupons(coupons) {
           <img src="" alt="">
           <p>${coupon.attributes.name}</p>
           <p>${coupon.attributes.code}</p>
-          <p>$${coupon.attributes.discount_type}</p>
-          <p>$${coupon.attributes.discount_value}</p>
-          <p>$${coupon.attributes.status}</p>
+          <p>${coupon.attributes.discount_type}</p>
+          <p>${coupon.attributes.discount_value}</p>
           <p class="merchant-name-in-item">Merchant: ${merchant}</p>
       </article>
       

@@ -45,7 +45,7 @@ input {
 /* ASIDE */
 aside {
   align-items: flex-end;
-  background-color: var(--blue);
+  background-color: #ff7f44;
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -132,7 +132,7 @@ h3 {
 }
 
 /* MERCHANT + ITEM CARDS */
-.merchant, .item {
+.merchant, .item, .coupon {
   align-items: center;
   background-color: #fff;
   border-radius: 8px;
@@ -149,6 +149,24 @@ h3 {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
   transform: translateY(-5px);
 }
+
+section#coupons-view {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction:row;  
+  justify-content: space-evenly;
+}
+
+.coupon {
+  flex-direction: column;
+  text-align: center;
+  width: 30%;
+}
+
+.coupon p,
+.coupon h2 {
+  margin: 5px;
+}  
 
 .items-view {
   display: flex;
