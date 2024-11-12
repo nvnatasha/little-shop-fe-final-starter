@@ -44,8 +44,9 @@ input {
 
 /* ASIDE */
 aside {
+  background-color:#ff7f44;
   align-items: flex-end;
-  background-color: #ff7f44;
+  position: sticky;
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -67,6 +68,11 @@ h1 {
 h2 {
   font-size: 1.5em;
   font-weight: normal;
+}
+
+.logo {
+  width: 150px;
+  margin-right: 20;
 }
 
 /* NAV */
