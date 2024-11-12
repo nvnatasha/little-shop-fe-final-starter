@@ -40,7 +40,7 @@ let items;
 //Page load data fetching
 Promise.all([fetchData('merchants'), fetchData('items')])
 .then(responses => {
-    merchants = responses[0].data
+    merchants = responses[0]
     items = responses[1].data
     displayMerchants(merchants)
   })
@@ -172,13 +172,13 @@ function displayItems(items) {
   firstHundredItems.forEach(item => {
     let merchant = findMerchant(item.attributes.merchant_id).attributes.name
     itemsView.innerHTML += `
-     <article class="item" id="item-${item.id}">
+      <article class="item" id="item-${item.id}">
           <img src="" alt="">
           <h2>${item.attributes.name}</h2>
           <p>${item.attributes.description}</p>
           <p>$${item.attributes.unit_price}</p>
           <p class="merchant-name-in-item">Merchant: ${merchant}</p>
-        </article>
+      </article>
     `
   })
 }
@@ -236,20 +236,35 @@ function getMerchantCoupons(event) {
   let merchantId = event.target.closest("article").id.split('-')[1]
   console.log("Merchant ID:", merchantId)
 
-  fetchData(`merchants/${merchantId}`)
-  .then(couponData => {
-    console.log("Coupon data from fetch:", couponData)
-    displayMerchantCoupons(couponData);
+  fetchData(`merchants/${merchantId}/coupons`)
+  .then(response => {
+    console.log("Coupon data from fetch:", response.data)
+    displayMerchantCoupons(response.data);
   })
 }
+
+
 
 function displayMerchantCoupons(coupons) {
   show([couponsView])
   hide([merchantsView, itemsView])
 
-  couponsView.innerHTML = `
-    <p>Coupon data will go here.</p>
-  `
+  couponsView.innerHTML = ``
+  coupons.forEach((coupon) =>{
+  let merchant = findMerchant(coupon.attributes.merchant_id).attributes.name
+    couponsView.innerHTML += `
+      <article class="coupon" id="coupon-${coupon.id}">
+          <img src="" alt="">
+          <p>${coupon.attributes.name}</p>
+          <p>${coupon.attributes.code}</p>
+          <p>$${coupon.attributes.discount_type}</p>
+          <p>$${coupon.attributes.discount_value}</p>
+          <p>$${coupon.attributes.status}</p>
+          <p class="merchant-name-in-item">Merchant: ${merchant}</p>
+      </article>
+      
+        `
+      })
 }
 
 //Helper Functions
