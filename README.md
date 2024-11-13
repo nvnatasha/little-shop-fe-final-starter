@@ -1,47 +1,24 @@
-# Little Shop - Coupon Codes | Final Project | Frontend Starter Repo
-
-This Vite Little Shop - Coupon Codes FE Final Project Boilerplate is built to consume and display the data from the BE Rails API built in the Mod 2 Final Project.  
-
-## Set Up Instructions
-
-**Note:** Do **not** clone this repo into your backend repo. Put it somewhere else as a stand alone. The BE and FE repos will remain two separate repos and you will submit the links to each.  
-
-1. Fork repo
-1. Clone forked repo and rename it `git clone <repo> <new name>`
-1. `cd` into cloned repo
-1. Run `npm install`
-1. Run `npm run dev` to start developing.
-  1. You'll see in the terminal that the project has opened at "http://localhost:5173/"
-
-## Notes
-
-This FE application is build to consume the data from your Rails API.  In order for it to work, you must have your Rails API running on localhost:3000. You will see fetch errors when running the FE without the BE API up and running.  
-
-Follow the directions in the FE requirements portion of the Little Shop Coupon Codes final project spec. When you are finished with the FE work, update this README to remove the current content and follow the template below.  
 
 ______________________________________________________  
-# README Template  
-Before turning this project in, erase this line and everything above it and fill in the info below.  
-______________________________________________________  
 
-# Hang in There  
+# Little shop, coupon codes 
 
-Link to your GitHub. Consider also providing LinkedIn link
 
 ### Abstract:
-(Briefly describe what you built and its features. What problem is the app solving? How does this application solve that problem?)
+I added to a front end that is connected to a backend for information. I wrote a few methods, or added to some already made in order to implement the addition of coupons to the front end site. 
 
 ### Installation Instructions:
-(What steps does a person have to take to get your app cloned down and running?)
+For the front end, it was forking and cloning a repository and working on it from there. For the back end, it was creating a whole new table of information and connecting it to other parts/tables that had already been implemented. 
 
 ### Preview of App:
-(Provide ONE gif or screenshot of your application - choose the "coolest" piece of functionality to show off. gifs preferred!)
+![Screenshot 2024-11-12 at 7 39 53 PM](https://github.com/user-attachments/assets/f704b881-374e-433b-9804-8a68f6ab0cc7)
+
 
 ### Context:
-(Give some context for the project here. How long did you have to work on it? What specific work/improvements did you contribute to this FE application?)
+The project was assigned on thursday? evening possibly. We had until the following week on Tuesday evening to turn it in. I personally ended up behind an entire day due to personal reasons. 
 
 ### Learning Goals:
-(What were the learning goals of this project? What tech did you work with?)
+A learning goal for me is to just always learn as much as I can from a project. 
 
 ### Wins + Challenges:
-(What are 2-3 wins you have from this project? What were some challenges you faced - and how did you get over them?)
+Wins are getting my tests running and the front end functioning the way it's supposed to. A challenged was choosing the lesser of two evils in what I decided was more important to have more improvement on. For instance, I had to choose between my Postman test examples, and my line coverage. I would either have ends that don't work in postman and line coverage over 98%, or working Postman, and line coverage on 97.38%. 
